@@ -1,0 +1,22 @@
+import tkinter as tk
+
+
+class Replicate(tk.Tk):
+    counter = 0
+
+    def __init__(self):
+        if Replicate.counter >= 3:
+            print("hi")
+        else:
+            tk.Tk.__init__(self)
+            self.a = tk.Button(self, text="click", command=self.repli)
+            self.a.pack()
+            Replicate.counter += 1
+            print(Replicate.counter)
+            self.mainloop()
+
+    def repli(self):
+        Replicate()
+
+
+Replicate()
